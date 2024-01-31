@@ -1,0 +1,253 @@
+@use "../../App.scss" as *;
+
+.container_logo_website{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin: 1em !important;
+}
+
+.border_header {
+    width: 100%;
+    height: 8px;
+    background: $DBYO_linear_gradient_red_purple_green;
+}
+
+.header_container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: space-evenly;
+    border: unset;
+    box-shadow: 0px 0 5px 0px rgb(185 185 185 / 31%);
+
+    .search_bar {
+
+        &:active {
+            box-shadow: 0px 2px 0px 0px rgba(185, 185, 185, 0.31);
+            transform: translateY(3px);
+        }
+
+        box-shadow: 0px 5px 0px 0px rgba(185, 185, 185, 0.31);
+        padding: 0.5em 1em;
+        border-radius: 25px;
+    }
+
+    .container_logo_pages {
+        display: flex;
+        align-items: center;
+
+        .container_logo_website {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin: 0em 2em;
+
+            >h2 {
+                font-family: 'Montserrat';
+                color: $DBYO_purple_light;
+                white-space: nowrap;
+                padding: 0 1em;
+            }
+        }
+
+        .container_custom_pages {
+            display: flex;
+            gap: 2em;
+            white-space: nowrap;
+            padding: 1em;
+
+            >a {
+                cursor: pointer;
+                font-family: 'Montserrat';
+                color: #35185A;
+                letter-spacing: 3px;
+                position: relative;
+                text-decoration: none;
+                transition: all .2s ease;
+            }
+
+            >a::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 2px;
+                background-color: #000;
+                transform: scaleX(0);
+                transition: transform 0.3s ease-in-out;
+                transform-origin: left;
+            }
+
+            >a:hover::after {
+                transform: scaleX(1);
+            }
+
+            >a:hover {
+                font-family: 'Montserrat';
+                color: $DBYO_light_medium_blue;
+            }
+
+            a.actus {
+                color: $DBYO_purple_light;
+
+                &:after {
+                    background-color: $DBYO_purple_light;
+                }
+            }
+
+            a.tests {
+                color: $DBYO_green_medium;
+
+                &:after {
+                    background-color: $DBYO_green_medium;
+                }
+            }
+
+            a.guides {
+                color: $DBYO_red;
+
+                &:after {
+                    background-color: $DBYO_red;
+                }
+            }
+
+            a.bons-plans {
+                color: $DBYO_yellow;
+
+                &:after {
+                    background-color: $DBYO_yellow;
+                }
+            }
+
+            a.tutos {
+                color: $DBYO_light_medium_blue;
+
+                &:after {
+                    background-color: $DBYO_light_medium_blue;
+                }
+            }
+        }
+    }
+
+    .container_login_articleCreation {
+        display: flex;
+        // flex-direction: column;
+        gap: 1em;
+        margin: 1em;
+
+        .container_btn_create_article {
+            display: flex;
+            align-items: center;
+        }
+
+        .user_menu {
+            position: relative;
+            cursor: pointer;
+            padding: 1em;
+
+            >a>img {
+                margin-bottom: 0em;
+                transform: translateY(4px);
+            }
+        }
+
+        .user_menu_content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #fff;
+            box-shadow: 1px 1px 10px 5px rgba(185, 185, 185, 0.31);
+            border-radius: 20px;
+            padding: 1em;
+            z-index: 1;
+            min-width: 250px;
+
+            >a {
+                margin-bottom: 1em;
+            }
+
+            .user_profile_image {
+                margin-bottom: 0em;
+            }
+
+            >.link_logout::before {
+                content: "";
+                background-color: #e4e4e47d;
+                display: block;
+                height: 2px;
+                width: 14rem;
+                border-radius: 25px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+            }
+
+            .link_logout {
+                text-align: center;
+                margin-top: 1em;
+                margin-bottom: 0;
+            }
+
+        }
+
+        .user_menu:hover .user_menu_content {
+            display: flex;
+        }
+
+
+        .container_user_login>a,
+        .container_btn_create_article>a {
+
+            &:active {
+                box-shadow: 0px 2px 0px 0px rgba(185, 185, 185, 0.31);
+                transform: translateY(3px);
+            }
+
+            cursor: pointer;
+            white-space: nowrap;
+            color: $DBYO_purple_light;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0px 5px 0px 0px rgba(185, 185, 185, 0.31);
+            padding: 0.5em 1em;
+            border-radius: 25px;
+        }
+
+        .container_btn_create_article>a {
+            background-color: $DBYO_purple_light;
+            color: $DBYO_white;
+            font-size: 2em;
+            justify-content: center;
+            padding: 0.25em 0.35em;
+        }
+    }
+
+}
+
+
+@media (max-width:1319px) {
+    .container_logo_pages {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:818px) {
+    .container_logo_pages {
+        flex-direction: flex;
+
+        >.container_custom_pages {
+            display: none !important;
+        }
+
+        .container_logo_website {
+            margin: 0 !important;
+        }
+    }
+
+}

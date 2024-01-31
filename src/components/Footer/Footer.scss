@@ -1,0 +1,65 @@
+@use "../../App.scss" as *;
+
+footer {
+    color: $DBYO_white;
+
+    .up_footer_container {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        .category_container {
+            display: flex;
+            justify-content: space-around;
+
+            >div>a,
+            h3 {
+                color: $DBYO_white;
+            }
+
+            .footer_category {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .footer_social_links {
+            display: flex;
+            justify-content: center;
+            margin: 1em;
+            gap: 1em;
+
+            .button {
+                box-shadow: unset !important;
+                color: $DBYO_white;
+            }
+        }
+    }
+
+    .down_footer_container {
+        background-color: rgb(235, 235, 235);
+        color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        .legal_links {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+
+            >a {
+                color: $DBYO_green_medium;
+            }
+        }
+
+        .copyright {
+            text-align: center;
+        }
+    }
+}
