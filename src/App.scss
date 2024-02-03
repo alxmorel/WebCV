@@ -97,16 +97,17 @@ figcaption {
   box-shadow: 0px 1px 4px 0px rgba(185, 185, 185, 0.31);
   border-radius: 20px;
 
-  &:active{
+  &:active {
     box-shadow: 0px 1px 2px 0px rgba(185, 185, 185, 0.31);
     transform: translateY(2px);
   }
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="date"] {
   // max-width: 350px;
-  height: 50px;
+  height: 35px;
   cursor: pointer;
   color: $DBYO_purple_light;
   display: flex;
@@ -126,6 +127,13 @@ input[type="password"] {
   &:hover {
     outline: $DBYO_purple_light auto 1px;
   }
+}
+
+::-webkit-calendar-picker-indicator {
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 textarea {

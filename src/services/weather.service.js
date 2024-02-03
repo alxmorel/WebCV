@@ -2,7 +2,7 @@
 const GEOCODE_API_KEY = '65bde1fb74420969301626rtm01648f'; // Free - 1 Request/Second
 //const BASE_URL = 'https://api.open-meteo.com/v1/forecast?latitude=43.297&longitude=5.3811&current=temperature_2m,precipitation,wind_speed_10m,wind_gusts_10m&forecast_days=1'; //Free
 const BASE_URL = 'https://api.open-meteo.com/v1/forecast'; //Free
-const OPTIONS_METEO = 'current=temperature_2m,cloud_cover,precipitation,wind_speed_10m,wind_gusts_10m&forecast_days=1'
+const OPTIONS_METEO = 'current=temperature_2m,cloud_cover,precipitation,wind_speed_10m,wind_gusts_10m&daily=sunrise,sunset&forecast_days=1'
 const GEOCODE_BASE_URL = 'https://geocode.maps.co/search'
 const weatherService = {
     getWeatherData: async (latitude, longitude) => {

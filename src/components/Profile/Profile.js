@@ -11,7 +11,15 @@ const Profile = () => {
     };
 
     const [profileData, setProfileData] = useState(null); // État local pour stocker les données
+    const [filteredExperience, setFilteredExperience] = useState(null);
+    const [filteredExperienceList, setFilteredExperiencelist] = useState([]);
 
+    const [filteredEducation, setFilteredEducation] = useState(null);
+    const [filteredEducationList, setFilteredEducationList] = useState([]);
+
+    const [companyFilter, setCompanyFilter] = useState('');
+    const [startDateFilter, setStartDateFilter] = useState('');
+    const [endDateFilter, setEndDateFilter] = useState('');
     // const { filterType } = useParams();
     // const validFilterType = filterType || "global";
 
@@ -22,6 +30,7 @@ const Profile = () => {
                 const data = await response.json();
                 console.log("data du profile : ", data)
                 setProfileData(data);
+                handleFilterChange(data);
             } catch (error) {
                 console.error('Erreur lors de la récupération des données :', error);
             }
@@ -53,21 +62,105 @@ const Profile = () => {
         };
     }, []);
 
+
+    const handleCompanyFilterChange = (value) => {
+        setCompanyFilter(value);
+        handleFilterChange(profileData);
+    };
+
+    const handleEducationFilterChange = (value) => {
+        setFilteredEducation(value);
+        handleFilterChange(profileData);
+    };
+
+    const handleStartDateFilterChange = (value) => {
+        setStartDateFilter(value);
+        handleFilterChange(profileData);
+    };
+
+    const handleEndDateFilterChange = (value) => {
+        setEndDateFilter(value);
+        handleFilterChange(profileData);
+    };
+
+    const handleFilterChange = (data) => {
+        // Filtrer les expériences en fonction du champ "company" ou du champ "title"
+        const filteredExpList = data.experience.filter(exp => {
+            const companyMatch = exp.company.toLowerCase().includes(companyFilter?.toLowerCase() || '');
+            const titleMatch = exp.title.toLowerCase().includes(companyFilter?.toLowerCase() || '');
+            return companyMatch || titleMatch;
+        });
+
+        const filteredEducList = data.education.filter(educ => {
+            const institutionMatch = educ.institution.toLowerCase().includes(filteredEducation?.toLowerCase() || '');
+            const degreeMatch = educ.degree.toLowerCase().includes(filteredEducation?.toLowerCase() || '');
+            return institutionMatch || degreeMatch;
+        });
+
+        // Mettre à jour l'état local avec les expériences filtrées
+        setFilteredExperiencelist(filteredExpList);
+
+        // Mettre à jour l'état local avec les données éducatives filtrées
+        setFilteredEducationList(filteredEducList);
+    };
+
+    useEffect(() => {
+        if (profileData) {
+            // Fonction pour gérer l'effet de frappe
+            const typeWriter = (text, element, speed) => {
+                let i = 0;
+                const typeEffect = () => {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(typeEffect, speed);
+                    }
+                };
+                typeEffect();
+            };
+
+            // Appel de la fonction pour votre texte d'introduction
+            const introTextElement = document.querySelector('.intro_text');
+            const introText = profileData.summary;
+            typeWriter(introText, introTextElement, 30); // Ajustez la vitesse selon vos besoins
+        }
+
+    }, [profileData]);
+
     return (
         <div className="global_content_container">
             {profileData ? (
                 <>
                     <WeatherCard location={profileData.personalInfo.location} />
+                    <div className='filter_container'>
+                        <div>
+                            <label>Entreprise:</label>
+                            <input type="text" value={companyFilter} onChange={(e) => handleCompanyFilterChange(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Education:</label>
+                            <input type="text" value={filteredEducation} onChange={(e) => handleEducationFilterChange(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Date de début:</label>
+                            <input type="date" value={startDateFilter} onChange={(e) => handleStartDateFilterChange(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Date de fin:</label>
+                            <input type="date" value={endDateFilter} onChange={(e) => handleEndDateFilterChange(e.target.value)} />
+                        </div>
+                    </div>
+
                     <div className="content_container">
 
                         {/* Section Résumé */}
-                        <h2>Résumé</h2>
-                        <p>{profileData.summary}</p>
+                        <h2 className='LandingPage_first_title'>Résumé</h2>
+                        <p className='intro_text'></p>
 
                         {/* Section Expérience */}
                         <h2>Expérience</h2>
-                        {profileData.experience.map((exp, index) => (
-                            <div key={index}>
+                        {filteredExperienceList && filteredExperienceList.map((exp, index) => (
+                            <div key={index} className='sub_item'>
                                 <h3>{exp.company}</h3>
                                 <p>{exp.title}</p>
                                 <p>{exp.duration}</p>
@@ -76,9 +169,9 @@ const Profile = () => {
                         ))}
 
                         {/* Section Éducation */}
-                        <h2>Éducation</h2>
-                        {profileData.education.map((edu, index) => (
-                            <div key={index}>
+                        <h2 className='LandingPage_first_title'>Éducation</h2>
+                        {filteredEducationList && filteredEducationList.map((edu, index) => (
+                            <div key={index} className='sub_item'>
                                 <h3>{edu.institution}</h3>
                                 <p>{edu.degree}</p>
                                 <p>{edu.duration}</p>
@@ -87,10 +180,10 @@ const Profile = () => {
                         ))}
 
                         {/* Section Compétences */}
-                        <h2>Compétences</h2>
+                        <h2 className='LandingPage_first_title'>Compétences</h2>
                         {/* Afficher les compétences techniques, agiles, de gestion, langues, etc. ici */}
                         {/* Compétences techniques */}
-                        <div>
+                        <div className='sub_item'>
                             <h3>Compétences Techniques</h3>
                             <ul>
                                 {profileData.skills.technical.map((techSkill, index) => (
@@ -102,7 +195,7 @@ const Profile = () => {
                         </div>
 
                         {/* Compétences agiles */}
-                        <div>
+                        <div className='sub_item'>
                             <h3>Compétences Agiles</h3>
                             <ul>
                                 {profileData.skills.agile.map((agileSkill, index) => (
@@ -114,7 +207,7 @@ const Profile = () => {
                         </div>
 
                         {/* Compétences en gestion */}
-                        <div>
+                        <div className='sub_item'>
                             <h3>Compétences en Gestion</h3>
                             <ul>
                                 {profileData.skills.management.map((managementSkill, index) => (
@@ -126,7 +219,7 @@ const Profile = () => {
                         </div>
 
                         {/* Compétences linguistiques */}
-                        <div>
+                        <div className='sub_item'>
                             <h3>Compétences Linguistiques</h3>
                             <ul>
                                 {profileData.skills.languages.map((languageSkill, index) => (
