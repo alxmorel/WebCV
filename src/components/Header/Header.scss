@@ -57,7 +57,7 @@
             white-space: nowrap;
             padding: 1em;
 
-            >a {
+            >div {
                 cursor: pointer;
                 font-family: 'Montserrat';
                 color: #35185A;
@@ -67,7 +67,7 @@
                 transition: all .2s ease;
             }
 
-            >a::after {
+            >div::after {
                 content: '';
                 position: absolute;
                 left: 0;
@@ -80,16 +80,16 @@
                 transform-origin: left;
             }
 
-            >a:hover::after {
+            >div:hover::after {
                 transform: scaleX(1);
             }
 
-            >a:hover {
+            >div:hover {
                 font-family: 'Montserrat';
                 color: $DBYO_light_medium_blue;
             }
 
-            a.actus {
+            div.actus {
                 color: $DBYO_purple_light;
 
                 &:after {
@@ -97,7 +97,7 @@
                 }
             }
 
-            a.tests {
+            div.tests {
                 color: $DBYO_green_medium;
 
                 &:after {
@@ -105,7 +105,7 @@
                 }
             }
 
-            a.guides {
+            div.guides {
                 color: $DBYO_red;
 
                 &:after {
@@ -113,7 +113,7 @@
                 }
             }
 
-            a.bons-plans {
+            div.bons-plans {
                 color: $DBYO_yellow;
 
                 &:after {
@@ -121,7 +121,7 @@
                 }
             }
 
-            a.tutos {
+            div.tutos {
                 color: $DBYO_light_medium_blue;
 
                 &:after {

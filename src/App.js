@@ -2,6 +2,8 @@ import './App.scss';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
+import Modal from './components/Modal/Modal';
+
 // import About from './components/About';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
@@ -42,7 +44,18 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+      {(cookieModalShow) &&
+        <Modal
+          show={cookieModalShow}
+          setModalShow={setcookieModalShow}
+          confirmAction={handleCookieAccept}
+          leaveAction={handleCookieRefuse}
+          description={"Alexandre Morel cv uses cookies to deliver and enhance the quality of its services and to analyze traffic. If you agree, cookies are also used to serve advertising and to personalize the content and advertisements that you see. Learn more."}
+          accept={"AGREE"}
+          refused={"NO THANKS"}
+          cookieModal={true}
+        />
+      }
     </div>
   );
 }

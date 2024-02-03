@@ -1,0 +1,69 @@
+@use "../../App.scss" as *;
+
+.weather_section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 1em;
+    border-radius: 7px;
+    box-shadow: 0 0 7px grey;
+    position: relative;
+    background-color: rgb(57, 141, 141);
+    .sun {
+        position: absolute;
+        top: 2em;
+        right: 15vw;
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        background-color: rgb(255, 217, 0);
+        opacity: 0.7;
+        animation: shine 4s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+        50% {
+            box-shadow:
+                0 0 20px rgb(255, 217, 0),
+                0 0 60px rgb(255, 217, 0),
+                0 0 250px rgb(255, 217, 0);
+        }
+    }
+
+    /* Autres styles pour la section météo */
+
+    .weather_data {
+        display: flex;
+        justify-content: space-between;
+        min-height: 200px;
+
+        .location_card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+    
+            >h2 {
+                margin: 0;
+            }
+        }
+
+        .weather_infos {}
+    }
+
+
+
+    .temperature {}
+
+    .precipitation {}
+
+    .vent {}
+
+    .cloud_texture {
+        // background-image: url('chemin/vers/votre/image/texture-de-nuage.jpg');
+        background-size: cover;
+        width: 100%;
+        opacity: 0.3;
+    }
+
+    /* Autres styles pour les autres éléments météo */
+}

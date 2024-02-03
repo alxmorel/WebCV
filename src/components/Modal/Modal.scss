@@ -1,0 +1,86 @@
+@use "../../App.scss" as *;
+
+.modalBg {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2021247a;
+
+    >.modal_container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 700px;
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+        border-radius: 10px;
+        background-color: #202124;
+        box-shadow: 0px 4px 4px 0px rgb(61 61 61 / 41%);
+
+        >h3 {
+            color: $DBYO_white;
+            margin: 0;
+        }
+
+        >p {
+            color: $DBYO_white;
+            line-height: 1.7;
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .btn_actions {
+            display: flex;
+            gap: 1em;
+
+            .modal_button {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                height: 40px;
+                padding: 0em 1em;
+                border-radius: 7px;
+                box-shadow: 0px 3px 0px 0px rgb(0 0 0 / 36%);
+                font-family: 'Montserrat';
+            }
+
+            .buttonAgree {
+                background-color: $DBYO_green_light;
+            }
+
+            .buttonDisagree {
+                background-color: #4a4a4a6e;
+                color: $DBYO_green_light;
+            }
+
+        }
+
+        &.cookie_modal {
+            transform:unset;
+            bottom: 1em;
+            left: 1em;
+            width: fit-content;
+            height: fit-content;
+        }
+
+    }
+
+}
+
+.modal_visible {
+    display: flex;
+}
+
+.modal_hidden {
+    display: none;
+}
