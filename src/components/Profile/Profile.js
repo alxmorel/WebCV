@@ -18,7 +18,7 @@ const Profile = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('webcv/data/users/profile.json');
+                const response = await fetch('/webcv/data/users/profile.json');
                 const data = await response.json();
                 console.log("data du profile : ", data)
                 setProfileData(data);
