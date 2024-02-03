@@ -1,0 +1,15 @@
+{
+    "tarifs": [
+      {
+        "plan": "Plan 1",
+        "price": "$10",
+        "features": ["Fonctionnalité 1", "Fonctionnalité 2"]
+      },
+      {
+        "plan": "Plan 2",
+        "price": "$20",
+        "features": ["Fonctionnalité 3", "Fonctionnalité 4"]
+      }
+    ]
+  }
+  

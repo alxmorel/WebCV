@@ -1,1 +1,103 @@
 @use "../../App.scss" as *;
+
+.global_content_container {
+
+    .content_container {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 0 10px 0px #b9b9b991;
+        padding: 1em;
+
+        .LandingPage_first_title {
+            font-family: 'Montserrat-bold', sans-serif;
+            -webkit-text-fill-color: transparent;
+            background: $DBYO_linear_gradient_purple_green;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: $DBYO_green_light;
+            font-size: 2em;
+            text-align: left;
+            font-weight: 800;
+            margin: 1em 1em 0.8em 1em;
+        }
+
+        .news_highlights {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .show_all_article_btn,
+        .show_all_product_btn {
+            margin-top: 0.5em;
+        }
+
+        .LandingPage_first_title::selection {
+            -webkit-text-fill-color: $DBYO_white;
+            background: $DBYO_green_light;
+            background-clip: unset;
+            color: $DBYO_white;
+        }
+
+        .section {
+            margin: 2em;
+
+            .recent_work_wrapper {
+                padding: 1em;
+
+                >div {
+                    font-size: 1.1em;
+                    margin-bottom: 1em;
+                }
+            }
+        }
+
+        .intro_text {
+            max-width: 500px;
+            text-align: center;
+
+            .typing-effect {
+                overflow: hidden;
+                white-space: nowrap;
+                animation: typing 4s steps(40, end);
+            }
+        }
+    }
+
+    .container_btn_back_to_top {
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .container_btn_back_to_top>div {
+        &:hover {
+            transform: translate(-50%, -45%);
+        }
+
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        max-width: 200px;
+        background-color: $DBYO_purple_light;
+        color: $DBYO_white;
+        text-decoration: none;
+        text-align: center;
+        box-shadow: 0px 5px 20px 11px rgb(187 132 232 / 40%);
+        padding: 0.5em 1em;
+        border-radius: 25px;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

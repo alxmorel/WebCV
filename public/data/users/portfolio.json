@@ -1,0 +1,15 @@
+{
+    "portfolio": [
+      {
+        "title": "Projet 1",
+        "description": "Description du projet 1.",
+        "image": "url_de_l_image_1.jpg"
+      },
+      {
+        "title": "Projet 2",
+        "description": "Description du projet 2.",
+        "image": "url_de_l_image_2.jpg"
+      }
+    ]
+  }
+  
