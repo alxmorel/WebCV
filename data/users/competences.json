@@ -1,0 +1,13 @@
+{
+    "competences": [
+      {
+        "category": "Catégorie 1",
+        "skills": ["Compétence 1", "Compétence 2", "Compétence 3"]
+      },
+      {
+        "category": "Catégorie 2",
+        "skills": ["Compétence 4", "Compétence 5", "Compétence 6"]
+      }
+    ]
+  }
+  

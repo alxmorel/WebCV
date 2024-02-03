@@ -1,0 +1,212 @@
+{
+    "personalInfo": {
+        "name": "Alexandre Morel",
+        "location": "Marseille",
+        "email": "alexandre.morel69@gmail.com",
+        "phone": "0614511027",
+        "linkedin": "linkedin.com/in/alexandre-morel69"
+    },
+    "summary": "Fort de 4 années d’expérience en développement applicatif auprès de clients du secteur des télécommunications, des nouvelles énergies et du pharmaceutique, je suis passionné par l’exploitation de solutions technologiques novatrices pour relever des défis opérationnels complexes. Mes expériences m’ont préparé à mener des projets de développement full stack sur des technologies variées (React, Angular, C#, Javascript, Web components) à m’intégrer à diverses équipes projet et aux outils de gestion de projet agile (JIRA, Trello, Confluence) et m’adapter à des secteurs d’activité distincts. De nature curieux, appliqué et persévérant, je saurai mettre mes compétences et mon expertise à la hauteur de vos ambitions.",
+    "experience": [
+        {
+            "company": "CGI",
+            "logo": "https://media.licdn.com/dms/image/C4E0BAQErzXWSFkn9tQ/company-logo_100_100/0/1663664110809/cgi_logo?e=1714608000&v=beta&t=gahF1KTW7Y898_Hyo0JnllNGKcGFQ39wwFn6eHx1Uos",
+            "title": "Information Technology Engineer",
+            "duration": "Oct 2021 – Present (2 yrs 5 mos)",
+            "responsibilities": [
+                {
+                    "role": "Consultant Développeur Full-stack (Angular, React) – Sanofi",
+                    "responsibility": "Développement d’outils de prévention et de dématérialisation de notices de médicaments pour Sanofi.",
+                    "highlights": [
+                        {
+                            "project": "EPI-INFO",
+                            "responsibility": "Responsable du développement et de la maintenance d’une application web permettant la consultation de notices de vaccin et de médicaments de manière électronique. Application statique réalisée en Typescript avec le framework React et une structure de données JSON. Développement d’une application sans-code dédiée à la gestion du contenu (remplace les fichiers de template Excel non dynamiques, archive les versions pour chaque produit, modifie le contenu, prévisualise les changements apportés, génère le fichier JSON de contenu) en Power platform (PowerApps, SharePoint, Power Automate). Mise en place d’un tableau de bord looker Studio sur la base des remontées Google Analytics, étude des KPI, gestion des remontées des évènements de l'application (GA Tag Manager)."
+                        },
+                        {
+                            "project": "Elefight",
+                            "responsibility": "Développement d'une application client léger utilisée pour aider à prévenir les maladies infectieuses dans le monde. Réalisée en Angular JS et fonctionne avec un back-office AWS. Développement d'un rapport Excel généré automatiquement par une lambda python vers Excel qui récupère les données Google Analytics et les interprète pour générer le rapport."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "company": "TotalEnergies",
+            "title": "Chargé de projets informatiques",
+            "duration": "Oct 2019 – Aug 2021 (1 yr 10 mos)",
+            "responsibilities": [
+                {
+                    "role": "Développeur VBA, analyste Excel",
+                    "responsibility": "Responsable du développement et de la maintenance des programmes VBA pour améliorer et automatiser les processus de contractualisation via l'ERP SAP.",
+                    "highlights": [
+                        "Facilitateur de Transition Technologique : Accompagnement dans la conduite du changement, formation des équipes, mise en place d’ateliers, communications d’équipe, animation de réunions, harmonisation des méthodes de travail."
+                    ]
+                },
+                {
+                    "role": "Développeur EBV (End to end Billing Verification) - Data Analyst",
+                    "responsibility": "Maintenance et amélioration de programmes de facturation et de détection de fraude pour des opérateurs de téléphonie.",
+                    "highlights": [
+                        "Amélioration des programmes pour permettre aux opérateurs téléphoniques de détecter les fraudes et écarts de facturation sur leurs réseaux."
+                    ]
+                }
+            ]
+        },
+        {
+            "company": "McDonald's",
+            "title": "Equipier polyvalent",
+            "duration": "May 2018 – Jul 2018 (3 mos)",
+            "responsibility": "Assurer les tâches de cuisine et de salle nécessaires à la restauration d'une clientèle de passage. Travail en équipe, en autonomie à l'écoute des managers, efficacité et responsabilisation par la coordination d'une équipe de cuisine."
+        },
+        {
+            "company": "SARL VIENNE BUROSET",
+            "title": "Stagiaire développement",
+            "duration": "Nov 2017 – Jan 2018 (3 mos)",
+            "responsibility": "Développement d’une application de personnalisation de produits en ligne en Javascript/PHP. Maintenance des sites de l'entreprise sous Prestashop et Wordpress. Travail en autonomie, responsabilisant sur un projet d’ampleur, à l’écoute des retours client. Planification des tâches et suivi d’une méthode agile pour mener le projet à bien."
+        },
+        {
+            "company": "Chavas",
+            "title": "Aide agricole saisonnier",
+            "duration": "Jul 2015 – Aug 2017 (2 yrs 2 mos)",
+            "responsibility": "Récolte des abricots et cerises. Efficacité de production sur plusieurs heures, travail de renforcement psychologique et physique."
+        },
+        {
+            "company": "La Passerelle",
+            "title": "Animateur en centre de loisirs",
+            "duration": "Jul 2014 – Aug 2014 (2 mos)",
+            "responsibility": "Responsable d’un petit groupe d’enfant de 5-6 ans, animer des activités et grands jeux adaptées à leur âge. Animé un mini camp avec une équipe d'animateur."
+        }
+    ],
+    "education": [
+        {
+            "institution": "Campus Sciences-U Lyon",
+            "degree": "Master en informatique, Informatique",
+            "duration": "2019 – 2021",
+            "highlights": [
+                "Management général, Infrastructure réseau et sécurité, Développement client léger / client lourd : Android, C#, Java, Javascript, PHP, Administration des bases de données sous Windows et Linux CentOs : Oracle Database, MySQL, PostgreSQL, Microsoft SQL Server, Marketing digital et Juridiction Informatique (RGPD), Cryptographie et Arithmétique modulaire, Economie et Contrôle de Gestion.",
+                "Réalisation d'un projet technique sur l'année : développement d'un client lourd en C# via Microsoft Visual Studio (conception du modèle de données, scripts de bdd, conception du design wireframe, développement des interactions backend client/serveur sous MariaDB et frontend)"
+            ]
+        },
+        {
+            "institution": "Université Claude Bernard Lyon 1",
+            "degree": "Licence Professionelle SID (Systèmes d'Information Décisionnels), Modélisation / stockage des données et administration de bases de données",
+            "duration": "2018 – 2019",
+            "highlights": [
+                "Conception et construction d’un système décisionnel, formation et mise en pratique à partir d’outil et plateformes décisionnel reconnus. Création d’univers avec l’outil BO, alimentation de datawarehouse et programmation de jobs ETL avec Talend et SSIS, réalisation de reporting sous QlikView et Tableau, modélisation multidimensionnelle sous PowerAMC, programmation Java, IHM et JDBC."
+            ]
+        },
+        {
+            "institution": "Université Grenoble Alpes",
+            "degree": "DUT - Informatique, Programmation / développeur informatique, général",
+            "duration": "2015 – 2018",
+            "highlights": [
+                "Formation au métier d’analyst-developer, Programmation web (HTML5, CSS3, javascript, php) et logiciel (Java, C, C++, Ada) Projets de création de sites web, et de jeux vidéo (monopoly, île interdite, sudoku), Projet de compétition GameJam (Food Fighter) et développement d’une application Android."
+            ]
+        }
+    ],
+    "skills": {
+        "technical": [
+            {
+                "skill": "Java",
+                "level": 70
+            },
+            {
+                "skill": "React JS",
+                "level": 95
+            },
+            {
+                "skill": "Angular JS",
+                "level": 90
+            },
+            {
+                "skill": "C#",
+                "level": 70
+            },
+            {
+                "skill": "Python",
+                "level": 70
+            },
+            {
+                "skill": "MongoDB",
+                "level": 70
+            },
+            {
+                "skill": "SGBD Oracle",
+                "level": 75
+            },
+            {
+                "skill": "SQL",
+                "level": 80
+            },
+            {
+                "skill": "MySQL",
+                "level": 75
+            },
+            {
+                "skill": "PostgreSQL",
+                "level": 70
+            },
+            {
+                "skill": "Talend",
+                "level": 70
+            },
+            {
+                "skill": "Power BI",
+                "level": 85
+            },
+            {
+                "skill": "Tableau",
+                "level": 80
+            },
+            {
+                "skill": "SAP Business Object",
+                "level": 75
+            }
+        ],
+        "agile": [
+            {
+                "skill": "Scrum",
+                "level": 80
+            },
+            {
+                "skill": "Jira",
+                "level": 85
+            },
+            {
+                "skill": "Confluence",
+                "level": 80
+            },
+            {
+                "skill": "Trello",
+                "level": 95
+            },
+            {
+                "skill": "Méthodes agiles",
+                "level": 90
+            }
+        ],
+        "management": [
+            {
+                "skill": "Gestion de projet",
+                "level": 80
+            },
+            {
+                "skill": "Recrutement",
+                "level": 75
+            },
+            {
+                "skill": "Communication",
+                "level": 85
+            }
+        ],
+        "languages": [
+            {
+                "skill": "Anglais",
+                "level": 85
+            },
+            {
+                "skill": "Allemand",
+                "level": 50
+            }
+        ]
+    }
+}
