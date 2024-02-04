@@ -20,10 +20,12 @@
                     "highlights": [
                         {
                             "project": "EPI-INFO",
+                            "illustration": "EPI_profilePage.png",
                             "responsibility": "Responsable du développement et de la maintenance d’une application web permettant la consultation de notices de vaccin et de médicaments de manière électronique. Application statique réalisée en Typescript avec le framework React et une structure de données JSON. Développement d’une application sans-code dédiée à la gestion du contenu (remplace les fichiers de template Excel non dynamiques, archive les versions pour chaque produit, modifie le contenu, prévisualise les changements apportés, génère le fichier JSON de contenu) en Power platform (PowerApps, SharePoint, Power Automate). Mise en place d’un tableau de bord looker Studio sur la base des remontées Google Analytics, étude des KPI, gestion des remontées des évènements de l'application (GA Tag Manager)."
                         },
                         {
                             "project": "Elefight",
+                            "illustration": "Elefight glassmorphism dashboard.jpeg",
                             "responsibility": "Développement d'une application client léger utilisée pour aider à prévenir les maladies infectieuses dans le monde. Réalisée en Angular JS et fonctionne avec un back-office AWS. Développement d'un rapport Excel généré automatiquement par une lambda python vers Excel qui récupère les données Google Analytics et les interprète pour générer le rapport."
                         }
                     ]

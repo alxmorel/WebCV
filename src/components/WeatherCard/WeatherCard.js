@@ -41,7 +41,7 @@ const WeatherCard = ({ location }) => {
             style={{
                 top: `${bird.top}vh`,
                 left: `${bird.left}vw`,
-                backgroundImage: `url('/webcv/img/icons/bird.png')`,
+                backgroundImage: `url('/webcv/img/icons/bird_${bird.type}.png')`,
             }}
         />
     ));
@@ -111,7 +111,7 @@ const WeatherCard = ({ location }) => {
         };
         const updateWeatherData = (weatherData) => {
             const windSpeed = weatherData?.current.wind_speed_10m || 0;
-            setCloudCoverOpacity(weatherData?.current.cloud_cover / 100 || 0);
+            setCloudCoverOpacity((weatherData?.current.cloud_cover+10) / 100 || 0);
 
             const mapWindSpeedToDuration = (speed) => {
                 return (150 - speed) * (30 - 3) / 150 + 3;

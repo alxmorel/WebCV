@@ -3,7 +3,8 @@ import './Profile.scss';
 import React, { useEffect, useState } from 'react';
 //import { useParams } from 'react-router-dom';
 import WeatherCard from '../WeatherCard/WeatherCard';
-
+import SkillWordCloud from '../SkillWordCloud/SkillWordCloud';
+import { useRef } from 'react';
 const Profile = () => {
 
     const backToTop = () => {
@@ -20,6 +21,15 @@ const Profile = () => {
     const [companyFilter, setCompanyFilter] = useState('');
     const [startDateFilter, setStartDateFilter] = useState('');
     const [endDateFilter, setEndDateFilter] = useState('');
+
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [isFilterSticked, setIsFilterSticked] = useState(false);
+    const filterContainerRef = useRef(null);
+
+
+    const toggleFilter = () => {
+        setIsFilterOpen(!isFilterOpen);
+    };
     // const { filterType } = useParams();
     // const validFilterType = filterType || "global";
 
@@ -127,12 +137,33 @@ const Profile = () => {
 
     }, [profileData]);
 
+    const checkSticked = () => {
+        const filterContainer = filterContainerRef.current;
+
+        if (filterContainer) {
+            const isSticked = filterContainer.getBoundingClientRect().top <= 0;
+            setIsFilterSticked(isSticked);
+        }
+    };
+
+    // Écouter l'événement de défilement
+    useEffect(() => {
+        window.addEventListener('scroll', checkSticked);
+
+        // Nettoyer l'événement lors du démontage du composant
+        return () => {
+            window.removeEventListener('scroll', checkSticked);
+        };
+    }, []);
+
+
+
     return (
-        <div className="global_content_container">
+        <div className={`global_content_container`}>
             {profileData ? (
                 <>
                     <WeatherCard location={profileData.personalInfo.location} />
-                    <div className='filter_container'>
+                    <div className={`filter_container ${isFilterOpen ? '' : 'closed'} ${isFilterSticked ? 'filter-sticked' : ''}`} ref={filterContainerRef}>
                         <div>
                             <label>Entreprise:</label>
                             <input type="text" value={companyFilter} onChange={(e) => handleCompanyFilterChange(e.target.value)} />
@@ -149,6 +180,16 @@ const Profile = () => {
                             <label>Date de fin:</label>
                             <input type="date" value={endDateFilter} onChange={(e) => handleEndDateFilterChange(e.target.value)} />
                         </div>
+
+                        {
+                            isFilterSticked &&
+                            <div className={`toggle_icon ${isFilterOpen ? 'rotate' : ''}`} onClick={toggleFilter} >
+                                <svg height={22} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                        }
+
                     </div>
 
                     <div className="content_container">
@@ -158,24 +199,62 @@ const Profile = () => {
                         <p className='intro_text'></p>
 
                         {/* Section Expérience */}
-                        <h2>Expérience</h2>
+                        <h2 className='LandingPage_first_title'>Expérience</h2>
                         {filteredExperienceList && filteredExperienceList.map((exp, index) => (
-                            <div key={index} className='sub_item'>
-                                <h3>{exp.company}</h3>
-                                <p>{exp.title}</p>
-                                <p>{exp.duration}</p>
-                                {/* Afficher les responsabilités et faits saillants ici */}
+                            <div key={index} className='sub_item experiences'>
+                                <div className='container_title_experience'>
+                                    <div>
+                                        <h3 className='LandingPage_second_title'>{exp.company}</h3>
+                                        <p>{exp.duration}</p>
+                                    </div>
+                                    <p>{exp.title}</p>
+
+                                </div>
+
+                                {exp.responsibilities && (
+                                    <div className='responsibilities'>
+                                        {/* <h4>Responsabilités :</h4> */}
+                                        <ul>
+                                            {exp.responsibilities.map((resp, index) => (
+                                                <div key={index} className='responsibility'>
+                                                    <h4 className='LandingPage_third_title'>{resp.role}</h4>
+                                                    <p >{resp.responsibility}</p>
+                                                    {resp.highlights.map((high, index) => (
+                                                        <div key={index} className='highlights'>
+                                                            <h3 >{high.project}</h3>
+                                                            <p >{high.responsibility}</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
                         ))}
 
                         {/* Section Éducation */}
                         <h2 className='LandingPage_first_title'>Éducation</h2>
                         {filteredEducationList && filteredEducationList.map((edu, index) => (
-                            <div key={index} className='sub_item'>
-                                <h3>{edu.institution}</h3>
-                                <p>{edu.degree}</p>
-                                <p>{edu.duration}</p>
-                                {/* Afficher les faits saillants de l'éducation ici */}
+                            <div key={index} className='sub_item experiences'>
+                                <div className='container_title_experience'>
+                                    <div>
+                                        <h3 className='LandingPage_second_title'>{edu.institution}</h3>
+                                        <p>{edu.duration}</p>
+                                    </div>
+                                    <p>{edu.degree}</p>
+                                </div>
+                                {edu.highlights && (
+                                    <div className='highlights'>
+                                        {edu.highlights.map((highlight, i) => (
+                                            <div className='responsibilities' key={i}>
+                                                <h4 className='LandingPage_third_title'></h4>
+
+                                                {highlight}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         ))}
 
@@ -184,8 +263,13 @@ const Profile = () => {
                         {/* Afficher les compétences techniques, agiles, de gestion, langues, etc. ici */}
                         {/* Compétences techniques */}
                         <div className='sub_item'>
-                            <h3>Compétences Techniques</h3>
-                            <ul>
+                            <div className='container_title_experience'>
+                                <div>
+                                    <h3>Compétences Techniques</h3>
+                                </div>
+                                <p></p>
+                            </div>
+                            <ul className='skills'>
                                 {profileData.skills.technical.map((techSkill, index) => (
                                     <li key={index}>
                                         {techSkill.skill}: {techSkill.level}%
@@ -196,7 +280,12 @@ const Profile = () => {
 
                         {/* Compétences agiles */}
                         <div className='sub_item'>
-                            <h3>Compétences Agiles</h3>
+                            <div className='container_title_experience'>
+                                <div>
+                                    <h3>Compétences Agiles</h3>
+                                </div>
+                                <p></p>
+                            </div>
                             <ul>
                                 {profileData.skills.agile.map((agileSkill, index) => (
                                     <li key={index}>
@@ -208,7 +297,12 @@ const Profile = () => {
 
                         {/* Compétences en gestion */}
                         <div className='sub_item'>
-                            <h3>Compétences en Gestion</h3>
+                            <div className='container_title_experience'>
+                                <div>
+                                    <h3>Compétences en Gestion</h3>
+                                </div>
+                                <p></p>
+                            </div>
                             <ul>
                                 {profileData.skills.management.map((managementSkill, index) => (
                                     <li key={index}>
@@ -220,7 +314,12 @@ const Profile = () => {
 
                         {/* Compétences linguistiques */}
                         <div className='sub_item'>
-                            <h3>Compétences Linguistiques</h3>
+                            <div className='container_title_experience'>
+                                <div>
+                                    <h3>Compétences Linguistiques</h3>
+                                </div>
+                                <p></p>
+                            </div>
                             <ul>
                                 {profileData.skills.languages.map((languageSkill, index) => (
                                     <li key={index}>
@@ -229,6 +328,7 @@ const Profile = () => {
                                 ))}
                             </ul>
                         </div>
+                        <SkillWordCloud skills={profileData.skills} />
 
                     </div>
                 </>
