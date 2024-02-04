@@ -9,7 +9,7 @@ const SkillWordCloud = ({ skills }) => {
         value: techSkill.level,
     }));
 
-    const size = [800, 400];
+    // const size = [800, 400];
     const options = {
         colors: ["#81ffcb", "#23dd90", "#7667ff", "#ff716a", "#5C4D6E", "#ffbd4a"],
         fontFamily: "Montserrat-Bold, Arial",
@@ -17,7 +17,7 @@ const SkillWordCloud = ({ skills }) => {
 
     return (
         <div className="wordcloud-container">
-            <ReactWordcloud words={words} size={size} options={options} />
+            <ReactWordcloud words={words} options={options} />
         </div>
     );
 };
