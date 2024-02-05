@@ -221,8 +221,11 @@ const Profile = () => {
                                                     <p >{resp.responsibility}</p>
                                                     {resp.highlights.map((high, index) => (
                                                         <div key={index} className='highlights'>
+                                                            <div>
                                                             <h3 >{high.project}</h3>
                                                             <p >{high.responsibility}</p>
+                                                            </div>
+                                                            <img src={`/webcv/img/project/${high.illustration}`}  alt={`Illustration projet ${high.illustration}`} />
                                                         </div>
                                                     ))}
                                                 </div>
