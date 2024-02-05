@@ -26,6 +26,18 @@ const Profile = () => {
     const [isFilterSticked, setIsFilterSticked] = useState(false);
     const filterContainerRef = useRef(null);
 
+    const [isSliderOpen, setIsSliderOpen] = useState(false);
+    const [selectedImageData, setSelectedImageData] = useState(null);
+
+    const handleImageClick = (high) => {
+        const { project, illustration, responsibility } = high;
+        setSelectedImageData({
+            project,
+            illustration,
+            responsibility,
+        });
+        setIsSliderOpen(true);
+    };
 
     const toggleFilter = () => {
         setIsFilterOpen(!isFilterOpen);
@@ -157,11 +169,23 @@ const Profile = () => {
     }, []);
 
 
-
     return (
         <div className={`global_content_container`}>
             {profileData ? (
                 <>
+                    {isSliderOpen && selectedImageData && (
+                        <div className="custom-slider-overlay" onClick={() => setIsSliderOpen(false)}>
+                            <div className="slider-container">
+                                {selectedImageData.illustration && (
+                                    <img
+                                        src={`/webcv/img/project/${selectedImageData.illustration.src}`}
+                                        alt={`Image agrandie de ${selectedImageData.responsibility}`}
+                                        className={`slider-image ${selectedImageData.illustration.height > selectedImageData.illustration.width ? 'portrait' : 'landscape'}`}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    )}
                     <WeatherCard location={profileData.personalInfo.location} />
                     <div className={`filter_container ${isFilterOpen ? '' : 'closed'} ${isFilterSticked ? 'filter-sticked' : ''}`} ref={filterContainerRef}>
                         <div>
@@ -222,10 +246,10 @@ const Profile = () => {
                                                     {resp.highlights.map((high, index) => (
                                                         <div key={index} className='highlights'>
                                                             <div>
-                                                            <h3 >{high.project}</h3>
-                                                            <p >{high.responsibility}</p>
+                                                                <h3 >{high.project}</h3>
+                                                                <p >{high.responsibility}</p>
                                                             </div>
-                                                            <img src={`/webcv/img/project/${high.illustration}`}  alt={`Illustration projet ${high.illustration}`} />
+                                                            <img src={`/webcv/img/project/${high.illustration.src}`} alt={`Illustration projet ${high.illustration.src}`} onClick={() => handleImageClick(high)} />
                                                         </div>
                                                     ))}
                                                 </div>
