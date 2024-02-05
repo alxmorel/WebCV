@@ -215,7 +215,8 @@
         &:hover {
             transform: translate(-50%, -45%);
         }
-
+        cursor: pointer;
+       user-select: none;
         position: fixed;
         bottom: 5%;
         left: 50%;
