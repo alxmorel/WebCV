@@ -3,9 +3,9 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
 import Modal from './components/Modal/Modal';
-
+import MenuMobile from './components/MenuMobile/MenuMobile';
 // import About from './components/About';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
 function App() {
@@ -13,6 +13,11 @@ function App() {
   const cookieEnabled = localStorage.getItem('cookieEnabled');
 
   const [cookieModalShow, setcookieModalShow] = useState(!cookieEnabled);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const handleCookieAccept = () => {
     if (navigator.cookieEnabled) {
@@ -31,7 +36,8 @@ function App() {
     <div className="App">
       <div className='follower'></div>
       <BrowserRouter>
-        <Header />
+        <Header toggleMobileMenu={toggleMobileMenu} />
+        <MenuMobile isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
         <Routes>
           <Route path="/" element={<Profile filterType="global" />} />
           <Route path="/:filterType" element={<Profile filterType="services" />} />

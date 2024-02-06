@@ -30,14 +30,6 @@
         transform-origin: center center;
     }
 
-    .slider-image.portrait {
-        object-fit: cover;
-    }
-
-    .slider-image.landscape {
-        object-fit: contain;
-    }
-
     .filter_container {
         position: relative;
         z-index: 100;

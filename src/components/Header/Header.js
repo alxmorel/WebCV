@@ -1,10 +1,10 @@
 import './Header.scss';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as solidIcons from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ toggleMobileMenu }) => {
 
     const navigate = useNavigate();
 
@@ -48,6 +48,12 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+                <label className='burger' for="check" onClick={ toggleMobileMenu }>
+                    <input type="checkbox" id="check" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
             </div>
         </header>
     );

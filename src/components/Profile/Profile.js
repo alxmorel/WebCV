@@ -1,10 +1,10 @@
 import './Profile.scss';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 //import { useParams } from 'react-router-dom';
 import WeatherCard from '../WeatherCard/WeatherCard';
 import SkillWordCloud from '../SkillWordCloud/SkillWordCloud';
-import { useRef } from 'react';
+
 const Profile = () => {
 
     const backToTop = () => {
@@ -180,7 +180,7 @@ const Profile = () => {
                                     <img
                                         src={`/webcv/img/project/${selectedImageData.illustration.src}`}
                                         alt={`Image agrandie de ${selectedImageData.responsibility}`}
-                                        className={`slider-image ${selectedImageData.illustration.height > selectedImageData.illustration.width ? 'portrait' : 'landscape'}`}
+                                        className={`slider-image ${selectedImageData.illustration.height > selectedImageData.illustration.width ? 'landscape' : 'portrait'}`}
                                     />
                                 )}
                             </div>
