@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as solidIcons from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
-const Header = ({ toggleMobileMenu }) => {
+const Header = ({ toggleMobileMenu, isMobileMenuOpen }) => {
 
     const navigate = useNavigate();
 
@@ -48,8 +48,8 @@ const Header = ({ toggleMobileMenu }) => {
                         </div>
                     </div>
                 </div>
-                <label className='burger' for="check" onClick={ toggleMobileMenu }>
-                    <input type="checkbox" id="check" />
+                <label className='burger' for="check" >
+                    <input type="checkbox" id="check" onClick={ toggleMobileMenu }/>
                     <span></span>
                     <span></span>
                     <span></span>

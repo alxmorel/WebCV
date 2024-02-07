@@ -36,8 +36,8 @@ function App() {
     <div className="App">
       <div className='follower'></div>
       <BrowserRouter>
-        <Header toggleMobileMenu={toggleMobileMenu} />
         <MenuMobile isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
+        <Header isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
         <Routes>
           <Route path="/" element={<Profile filterType="global" />} />
           <Route path="/:filterType" element={<Profile filterType="services" />} />
