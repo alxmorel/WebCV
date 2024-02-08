@@ -12,12 +12,14 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
+    "d3": "^6.7.0",
     "gsap": "^3.12.5",
     "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",
     "react-scripts": "^5.0.1",
+    "react-wordcloud": "^1.2.7",
     "sass": "^1.70.0",
     "snapsvg-cjs": "^0.0.6",
     "web-vitals": "^2.1.4"
@@ -28,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "npm run build && cp -r public/* build && gh-pages -d build"
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

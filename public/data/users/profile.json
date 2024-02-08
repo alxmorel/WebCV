@@ -9,10 +9,35 @@
     "summary": "Fort de 4 années d’expérience en développement applicatif auprès de clients du secteur des télécommunications, des nouvelles énergies et du pharmaceutique, je suis passionné par l’exploitation de solutions technologiques novatrices pour relever des défis opérationnels complexes. Mes expériences m’ont préparé à mener des projets de développement full stack sur des technologies variées (React, Angular, C#, Javascript, Web components) à m’intégrer à diverses équipes projet et aux outils de gestion de projet agile (JIRA, Trello, Confluence) et m’adapter à des secteurs d’activité distincts. De nature curieux, appliqué et persévérant, je saurai mettre mes compétences et mon expertise à la hauteur de vos ambitions.",
     "experience": [
         {
+            "company": "Stilog I.S.T.",
+            "logo": "https://media.licdn.com/dms/image/C4E0BAQFQ4I9dIf14JA/company-logo_100_100/0/1660658180699?e=1715212800&v=beta&t=PtBkdoIcKesVImHAAFSntC37udkvi_Fds-sfyJRfmV8",
+            "title": "Ingénieur conception logiciels",
+            "duration": "Nov 2023 – Present ( 3 mos)",
+            "location": "La Ciotat, Provence-Alpes-Côte d’Azur, France",
+            "responsibilities": [
+                {
+                    "role": "Consultant Développeur Full-stack (Angular) - Safran",
+                    "responsibility": "",
+                    "highlights": [
+                        {
+                            "project": "Matis Module Economique",
+                            "illustration": {
+                                "src": "",
+                                "width": "",
+                                "height": ""
+                            },
+                            "responsibility": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "company": "CGI",
             "logo": "https://media.licdn.com/dms/image/C4E0BAQErzXWSFkn9tQ/company-logo_100_100/0/1663664110809/cgi_logo?e=1714608000&v=beta&t=gahF1KTW7Y898_Hyo0JnllNGKcGFQ39wwFn6eHx1Uos",
             "title": "Information Technology Engineer",
-            "duration": "Oct 2021 – Present (2 yrs 5 mos)",
+            "duration": "Oct 2021 – Nov 2023 (2 yrs 1 mos)",
+            "location": "Lyon, France",
             "responsibilities": [
                 {
                     "role": "Consultant Développeur Full-stack (Angular, React) – Sanofi",
@@ -20,10 +45,20 @@
                     "highlights": [
                         {
                             "project": "EPI-INFO",
+                            "illustration": {
+                                "src": "EPI_profilePage.png",
+                                "width": "5760",
+                                "height": "5280"
+                            },
                             "responsibility": "Responsable du développement et de la maintenance d’une application web permettant la consultation de notices de vaccin et de médicaments de manière électronique. Application statique réalisée en Typescript avec le framework React et une structure de données JSON. Développement d’une application sans-code dédiée à la gestion du contenu (remplace les fichiers de template Excel non dynamiques, archive les versions pour chaque produit, modifie le contenu, prévisualise les changements apportés, génère le fichier JSON de contenu) en Power platform (PowerApps, SharePoint, Power Automate). Mise en place d’un tableau de bord looker Studio sur la base des remontées Google Analytics, étude des KPI, gestion des remontées des évènements de l'application (GA Tag Manager)."
                         },
                         {
                             "project": "Elefight",
+                            "illustration": {
+                                "src": "Elefight_glassmorphism_dashboard.jpeg",
+                                "width": "1744",
+                                "height": "2266"
+                            },
                             "responsibility": "Développement d'une application client léger utilisée pour aider à prévenir les maladies infectieuses dans le monde. Réalisée en Angular JS et fonctionne avec un back-office AWS. Développement d'un rapport Excel généré automatiquement par une lambda python vers Excel qui récupère les données Google Analytics et les interprète pour générer le rapport."
                         }
                     ]
@@ -39,14 +74,51 @@
                     "role": "Développeur VBA, analyste Excel",
                     "responsibility": "Responsable du développement et de la maintenance des programmes VBA pour améliorer et automatiser les processus de contractualisation via l'ERP SAP.",
                     "highlights": [
-                        "Facilitateur de Transition Technologique : Accompagnement dans la conduite du changement, formation des équipes, mise en place d’ateliers, communications d’équipe, animation de réunions, harmonisation des méthodes de travail."
+                        {
+                            "responsibility": "Facilitateur de Transition Technologique : Accompagnement dans la conduite du changement, formation des équipes, mise en place d’ateliers, communications d’équipe, animation de réunions, harmonisation des méthodes de travail.",
+                            "illustration": {
+                                "src": "Suivi_New_Fid_DODO_TotalEnergies.png",
+                                "width": "1755",
+                                "height": "1318"
+                            }
+                        }
                     ]
                 },
                 {
                     "role": "Développeur EBV (End to end Billing Verification) - Data Analyst",
                     "responsibility": "Maintenance et amélioration de programmes de facturation et de détection de fraude pour des opérateurs de téléphonie.",
+                    "location": "Lyon, France",
                     "highlights": [
-                        "Amélioration des programmes pour permettre aux opérateurs téléphoniques de détecter les fraudes et écarts de facturation sur leurs réseaux."
+                        {
+                            "responsibility": "Amélioration des programmes pour permettre aux opérateurs téléphoniques de détecter les fraudes et écarts de facturation sur leurs réseaux.",
+                            "illustration": {
+                                "src": "",
+                                "width": "",
+                                "height": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "company": "Araxxe",
+            "title": "Chargé de projets informatiques",
+            "duration": "Sep 2018 – Sep 2019 (1 yr 1 mo)",
+            "location": "Lyon, France",
+            "responsibilities": [
+                {
+                    "role": "Développeur EBV (End to end Billing Verification) - Data Analyst",
+                    "responsibility": "Maintenance et amélioration de programmes de facturation et de détection de fraude pour des opérateurs de téléphonie.",
+                    "highlights": [
+                        {
+                            "responsibility": "Amélioration des programmes pour permettre aux opérateurs téléphoniques de détecter les fraudes et écarts de facturation sur leurs réseaux.",
+                            "illustration": {
+                                "src": "",
+                                "width": "",
+                                "height": ""
+                            }
+                        }
                     ]
                 }
             ]
