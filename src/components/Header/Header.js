@@ -48,7 +48,7 @@ const Header = ({ toggleMobileMenu, isMobileMenuOpen }) => {
                         </div>
                     </div>
                 </div>
-                <label className='burger' for="check" >
+                <label className={`burger ${isMobileMenuOpen ? 'open' : 'close'}`}  for="check" >
                     <input type="checkbox" id="check" onClick={ toggleMobileMenu }/>
                     <span></span>
                     <span></span>

@@ -22,7 +22,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding: 2em 0;
+        padding: 1em 0;
     }
 
     >.container_custom_pages_menu {
@@ -35,7 +35,7 @@
 
         >div {
             color: white;
-            padding: 2em;
+            padding: 4vh;
             width: 100%;
             text-align: center;
             transition: transform ease-in-out .3s , box-shadow ease-in-out .3s;
